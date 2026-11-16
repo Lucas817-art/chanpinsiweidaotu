@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>短期出口信用保险 · 中小企业综合保险(3.0版) A款 · 思维导图</title>
+  <style>
+    /* 全局风格 — 干净、现代、类似信息图 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f0f4f8;
+      font-family: 'Inter', 'Segoe UI', Roboto, system-ui, sans-serif;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.5;
+    }
+
+    .mindmap {
+      max-width: 1400px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    /* 中央主干卡片 —— 代表产品核心 */
+    .central-node {
+      flex: 0 0 100%;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .central-card {
+      background: linear-gradient(145deg, #0b3954, #0a4c6e);
+      color: white;
+      border-radius: 48px;
+      padding: 1.5rem 2rem;
+      display: inline-block;
+      box-shadow: 0 20px 30px -10px rgba(0, 20, 40, 0.4);
+      border: 2px solid #ffb347;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .central-card h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .central-card h1 span {
+      background: #ffb347;
+      color: #0b2b3b;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.25rem 0.9rem;
+      border-radius: 60px;
+      letter-spacing: 0.3px;
+    }
+
+    .central-card .subhead {
+      font-size: 1rem;
+      color: #d4e6f1;
+      margin-top: 0.5rem;
+      border-top: 1px dashed #3e7a9c;
+      padding-top: 0.75rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .central-card .subhead span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 通用卡片样式 */
+    .card {
+      background: white;
+      border-radius: 32px;
+      box-shadow: 0 12px 24px -8px rgba(0, 20, 40, 0.12);
+      transition: all 0.2s ease;
+      border: 1px solid #e2e9f0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      box-shadow: 0 20px 30px -10px rgba(0, 70, 120, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .card-header {
+      padding: 1.2rem 1.5rem 0.6rem 1.5rem;
+      border-bottom: 2px solid #f0f7fe;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-header .icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .card-header h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0b3954;
+      letter-spacing: -0.02em;
+    }
+
+    .card-body {
+      padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+      flex: 1;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e4eff9;
+      color: #0e5a7a;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.2px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+      color: #1e2f3f;
+    }
+
+    li::before {
+      content: "●";
+      color: #2d7ea0;
+      font-size: 0.7rem;
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      opacity: 0.8;
+    }
+
+    .nested-list {
+      margin-top: 0.5rem;
+      margin-bottom: 0.3rem;
+      padding-left: 1rem;
+      border-left: 2px solid #cfe1ee;
+    }
+
+    .nested-list li {
+      padding-left: 1.2rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+      color: #2e4255;
+    }
+
+    .nested-list li::before {
+      content: "○";
+      color: #558faa;
+      font-size: 0.7rem;
+      top: 0.15rem;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .risk-tag {
+      font-weight: 600;
+      color: #a94442;
+      background: #ffeeed;
+      display: inline-block;
+      padding: 0.1rem 0.5rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      margin-right: 0.4rem;
+    }
+
+    .highlight {
+      background: #fef8e7;
+      border-left: 4px solid #ffb347;
+      padding: 0.6rem 1rem;
+      border-radius: 12px;
+      margin: 0.8rem 0;
+      font-size: 0.88rem;
+    }
+
+    /* 卡片尺寸分配 */
+    .col {
+      flex: 1 1 320px;
+      min-width: 290px;
+    }
+
+    .wide {
+      flex: 2 2 600px;
+      min-width: 400px;
+    }
+
+    .full-row {
+      flex: 0 0 100%;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2col {
+        grid-template-columns: 1fr;
+      }
+      .central-card h1 {
+        font-size: 1.4rem;
+      }
+    }
+
+    /* 连接线装饰（纯视觉） */
+    .connector-line {
+      width: 2px;
+      height: 20px;
+      background: #b8d0e0;
+      margin: 0 auto;
+    }
+
+    .footnote {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #6f8a9c;
+      text-align: center;
+      border-top: 1px solid #d9e5ee;
+      padding-top: 1.5rem;
+      max-width: 700px;
+    }
+  </style>
+</head>
+<body>
+  <div class="mindmap">
+
+    <!-- 中央节点：产品名称与核心信息 -->
+    <div class="central-node">
+      <div class="central-card">
+        <h1>
+          ⚓ 短期出口信用保险
+          <span>中小企业综合保险 3.0 · A款</span>
+        </h1>
+        <div class="subhead">
+          <span>🏛 中国出口信用保险公司</span>
+          <span>📅 起售：2026年9月1日</span>
+          <span>🔒 纯保障型 · 无投资功能</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第1行 左边 适保范围 -->
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <div class="icon">📋</div>
+          <h2>适保范围</h2>
+        </div>
+        <div class="card-body">
+          <div class="badge">第一条</div>
+          <ul>
+            <li><strong>投保人/被保险人：</strong>中国境内注册企业</li>
+            <li><strong>出口条件：</strong>货物出口真实、合法，贸易合同完整</li>
+            <li><strong>支付方式：</strong>信用证 / 非信用证（D/P、D/A、OA等）</li>
+            <li><strong>信用期限：</strong>不超过1年（《信用限额审批单》另有约定除外）</li>
+            <li>信用证须为不可撤销跟单信用证，符合UCP</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第1行 右边 保险责任（商业风险+政治风险） -->
+    <div class="wide">
+      <div class="card">
+        <div class="card-header">
+          <div class="icon">🛡️</div>
+          <h2>保险责任</h2>
+        </div>
+        <div class="card-body">
+          <div class="badge">第二条 · 仅承保直接损失</div>
+          <div class="grid-2col">
+            <!-- 商业风险 -->
+            <div>
+              <p style="font-weight:700; color:#0b3954; margin-bottom:0.5rem;">💼 商业风险</p>
+              <ul>
+                <li><span class="risk-tag">非信用证</span>买方破产/无力偿付</li>
+                <li>买方拖欠</li>
+                <li>买方拒绝接收货物</li>
+                <li><span class="risk-tag">信用证</span>开证行破产/停业/被接管</li>
+                <li>开证行拖欠</li>
+                <li>开证行拒绝承兑</li>
+              </ul>
+            </div>
+            <!-- 政治风险 -->
+            <div>
+              <p style="font-weight:700; color:#0b3954; margin-bottom:0.5rem;">🌍 政治风险</p>
+              <ul>
+                <li><span class="risk-tag">非信用证</span>禁止/限制买方付汇；禁止进口；撤销进口许可证</li>
+                <li>第三国/买方国延期付款令</li>
+                <li>战争、内战、叛乱、革命、暴动导致无法履约</li>
+                <li>其他经保险人认定的政治风险事件</li>
+                <li><span class="risk-tag">信用证</span>开证行所在国禁止/限制付汇</li>
+                <li>延期付款令；战争等导致开证行无法付款</li>
+                <li>其他政治风险事件</li>
+              </ul>
+            </div>
+          </div>
+          <div class="highlight" style="margin-top:0.6rem;">
+            ⚠️ 对于境内买方/开证行（注册于中国境内），仅承保商业风险。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第2行 除外责任（宽卡片） -->
+    <div class="wide">
+      <div class="card">
+        <div class="card-header">
+          <div class="icon">🚫</div>
+          <h2>除外责任</h2>
+        </div>
+        <div class="card-body">
+          <div class="badge">第三条 · 保险人不承担赔偿</div>
+          <div class="grid-2col">
+            <ul>
+              <li>汇率变更引起的损失</li>
+              <li>被保险人违约、欺诈、违法或代理人破产</li>
+              <li>已知风险发生仍继续出口</li>
+              <li><strong>非信用证下：</strong>向关联公司出口（商业风险）；未获许可证/批准书导致合同无法履行</li>
+            </ul>
+            <ul>
+              <li><strong>信用证下：</strong>单证/单单不符导致拒付；单据传递中迟延/遗失/残缺；未按约定提交单据（除保险人指示）；虚假/无效信用证</li>
+              <li>本保单责任以外的其他损失</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第2行 左边 责任限额 -->
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <div class="icon">📊</div>
+          <h2>责任限额</h2>
+        </div>
+        <div class="card-body">
+          <div class="badge">第四条</div>
+          <ul>
+            <li><strong>最高赔偿限额：</strong>保险期间内累计最高赔偿额</li>
+            <li><strong>信用限额：</strong>针对特定买方/开证行的赔付基数上限，赔偿额=基数×赔偿比例</li>
+            <li>赔偿比例以《保险单明细表》及批单为准，调整后对生效日后出口有效</li>
+            <li>信用限额需书面申请；生效日后的出口有效（特殊追溯条件）</li>
+            <li>提交《索赔申请书》后该买方/开证行信用限额自动撤销</li>
+            <li>新限额生效后原限额失效，责任余额自动转入新限额</li>
+            <li>未获得信用限额或已失效，保险人不对相应出口负责</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第2行 中间偏右 保险费 -->
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <div class="icon">💰</div>
+          <h2>保险费</h2>
+        </div>
+        <div class="card-body">
+          <div class="badge">第五条</div>
+          <ul>
+            <li>年度保险费，收到保费是承担保险责任的前提</li>
+            <li>拖欠保费超过约定期限60日 → 保险人有权解除保单并书面通知</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第3行 索赔与追偿（大卡片，包含时间、流程、损失计算、特殊理赔） -->
+    <div class="full-row">
+      <div class="card">
+        <div class="card-header">
+          <div class="icon">⚖️</div>
+          <h2>索赔与追偿</h2>
+        </div>
+        <div class="card-body">
+          <div class="grid-2col" style="gap:1.8rem;">
+            <!-- 左列：索赔时间、流程、定损赔付 -->
+            <div>
+              <p style="font-weight:700; color:#0b3954; margin-bottom:0.5rem;">⏱ 索赔时间 & 流程</p>
+              <ul>
+                <li><strong>索赔时限：</strong>拖欠风险发生后60日内；其他风险15日内（逾期保险人有权降低赔偿比例或拒赔，除非书面同意）</li>
+                <li>提交《索赔申请书》+《索赔单证明细表》所列单证；单证不全且未补交 → 保险人有权拒收</li>
+                <li>核赔时限：受理后90日内核实并书面通知</li>
+                <li>赔付基数：核定损失金额与信用限额从低；不超过发票金额；赔付金额 = 基数 × 赔偿比例</li>
+                <li>赔付决定后30日内支付赔款；权益转让给保险人</li>
+              </ul>
+              <p style="font-weight:700; color:#0b3954; margin-top:1rem; margin-bottom:0.5rem;">📉 定损扣除项</p>
+              <ul>
+                <li>买方已支付/抵销、擅自降价/放弃债权、接受反索赔</li>
+                <li>已从其他途径收回款项（转卖、抵押、担保人）</li>
+                <li>已从开证行/买方获得其他款项或权益</li>
+                <li>已收取利息、罚息、违约金</li>
+                <li>其他不合理款项或费用</li>
+              </ul>
+            </div>
+            <!-- 右列：特殊理赔、追偿、追回款、赔款退回 -->
+            <div>
+              <p style="font-weight:700; color:#0b3954; margin-bottom:0.5rem;">🧾 特殊理赔 & 追偿</p>
+              <ul>
+                <li><strong>付款担保：</strong>除非保险人书面认可，在担保人付款或对担保人诉讼/仲裁获得生效判决前，不核赔</li>
+                <li><strong>贸易纠纷：</strong>可协商和解，保险人核实后承担保险责任；协商不成且不认可责任判定，需先仲裁/诉讼</li>
+                <li>诉讼费、仲裁费、律师费由被保险人先付；胜诉且属保险责任时，按权益比例分摊</li>
+                <li>货物处理：需事先经保险人书面同意，否则可能降低赔偿比例或拒赔</li>
+                <li><strong>追偿：</strong>提交索赔后应委托保险人追偿或按指示自行追偿，否则保险人有权降低赔偿比例或拒赔</li>
+                <li>追偿费用按权益比例分摊；若损失不属保险责任，费用由被保险人承担</li>
+                <li>赔付前买方付款视为按应付款日顺序偿还应收账款</li>
+                <li>赔付后被保险人仍有协助追偿义务；追回款15日内退还保险人应得部分</li>
+              </ul>
+              <p style="font-weight:700; color:#0b3954; margin-top:0.8rem; margin-bottom:0.5rem;">↩️ 已支付赔款退回</p>
+              <ul>
+                <li>发现付款担保/贸易纠纷或未遵守最大诚信</li>
+                <li>擅自接受退货、折扣、放弃债权或私自和解</li>
+                <li>因被保险人原因导致代位追偿权不能行使</li>
+                <li>致损原因不属保险责任</li>
+                <li>收到退款要求后15日内退还赔款及利息</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第4行 被保险人义务（左） + 其他约定 & 名词解释（右） -->
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <div class="icon">👤</div>
+          <h2>被保险人义务</h2>
+        </div>
+        <div class="card-body">
+          <div class="badge">第十八至二十四条</div>
+          <ul>
+            <li><strong>谨慎义务：</strong>审慎核实买方身份，保全权利，检查合同，催收货款</li>
+            <li><strong>诚信原则：</strong>全面、准确、及时书面告知影响风险的信息</li>
+            <li><strong>不利信息通知：</strong>及时采取措施减损，书面通知保险人；买方/开证行破产时及时登记债权</li>
+            <li><strong>不得重复投保：</strong>未经书面同意不得向其他机构投保信用保险</li>
+            <li><strong>协助核查：</strong>配合保险人核查账册、合同、单证等；保险人保密</li>
+            <li><strong>保密义务：</strong>对保单条款、单证及买方信息保密</li>
+            <li><strong>罚则：</strong>未履行义务影响保险人利益 → 保险人有权降低赔偿比例、拒赔或解除保单且不退保费；未如实告知 → 90日内可解除保单/相关信用限额，拒赔且不退费</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <div class="icon">📜</div>
+          <h2>其他约定 & 名词解释</h2>
+        </div>
+        <div class="card-body">
+          <div class="badge">第二十五至三十条</div>
+          <ul>
+            <li><strong>保单解除：</strong>生效后90日内未发生索赔，被保险人可解除，退还年度保费，自始不承担保险责任；满90日后不得解除</li>
+            <li><strong>权益处置：</strong>未经保险人书面同意，转让、抵押、质押等处置保单权益对保险人无约束力</li>
+            <li><strong>保险期间：</strong>在《保险单明细表》中约定，一般不超过1年</li>
+            <li><strong>争议解决：</strong>协商不成按《保险单明细表》约定方式</li>
+            <li><strong>法律适用：</strong>中文文本为准，适用中华人民共和国法律</li>
+            <li><strong>关键名词：</strong>信用期限、非信用证支付方式（D/P、D/A、OA）、开证行（含保兑行）、破产、拖欠（超过应付款日30天）、拒绝接收货物、关联公司、贸易纠纷、追偿费用等</li>
+          </ul>
+          <div class="highlight" style="margin-top:0.8rem;">
+            📌 保单由投保单、明细表、条款、批单、信用限额申请表/审批单、索赔申请书等组成。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 额外行：产品说明重点（保险期间、预期利益、起售停售） -->
+    <div class="full-row">
+      <div class="card">
+        <div class="card-header">
+          <div class="icon">📘</div>
+          <h2>产品说明书 · 补充要点</h2>
+        </div>
+        <div class="card-body" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;">
+          <div style="flex:1; min-width:200px;">
+            <span class="badge">保险期间</span>
+            <p style="font-weight:500;">一般不超过1年</p>
+          </div>
+          <div style="flex:1; min-width:200px;">
+            <span class="badge">保单预期利益</span>
+            <p>纯保障型保险，不具备投资和储蓄功能，不产生额外保单收益。</p>
+          </div>
+          <div style="flex:1; min-width:200px;">
+            <span class="badge">起售 / 停售</span>
+            <p>起售：2026年9月1日（承保系统上线2026年9月19日）<br>停售日期：未停售</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footnote">
+    ⚡ 本思维导图依据中国出口信用保险公司《短期出口信用保险中小企业综合保险（3.0版）A款条款》及《产品说明书》整理。<br>
+    所有内容以正式保单及条款为准。
+  </div>
+</body>
+</html>

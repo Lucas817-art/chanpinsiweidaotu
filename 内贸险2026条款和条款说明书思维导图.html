@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国内贸易信用保险（2026版）· 思维导图</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f0f4f9;
+      font-family: system-ui, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Roboto, 'Helvetica Neue', sans-serif;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1500px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px -12px rgba(0, 20, 50, 0.25);
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: #0b2b4a;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .subhead {
+      text-align: center;
+      color: #4a627a;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #d9e2ec;
+      padding-bottom: 1rem;
+    }
+
+    .subhead span {
+      background: #e8f0fe;
+      color: #0b4a7a;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+
+    /* 思维导图网格 —— 树状结构 */
+    .mindmap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    /* 根节点 */
+    .root-node {
+      background: #0b2b4a;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      text-align: center;
+      box-shadow: 0 8px 0 #051a2e;
+      width: fit-content;
+      margin: 0 auto 0.5rem auto;
+      letter-spacing: 2px;
+    }
+
+    /* 主分支容器 */
+    .branch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.4rem;
+    }
+
+    /* 每个主分支卡片 */
+    .branch {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0, 30, 60, 0.08);
+      border: 1px solid #dde7f0;
+      overflow: hidden;
+      transition: 0.15s ease;
+    }
+
+    .branch:hover {
+      box-shadow: 0 12px 24px rgba(0, 40, 80, 0.12);
+      border-color: #b6cde0;
+    }
+
+    .branch-header {
+      background: #e3eef9;
+      padding: 0.9rem 1.2rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #093a5e;
+      border-bottom: 2px solid #b8d0e5;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .branch-header .icon {
+      font-size: 1.4rem;
+    }
+
+    .branch-content {
+      padding: 1rem 1.2rem 1.2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    /* 子节点样式 */
+    .node-item {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0.2rem;
+    }
+
+    .node-title {
+      font-weight: 600;
+      color: #1a3e5c;
+      font-size: 0.96rem;
+      padding: 0.25rem 0 0.15rem 0.6rem;
+      border-left: 4px solid #4a8bb9;
+      background: #f6faff;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 4px;
+    }
+
+    .node-desc {
+      font-size: 0.85rem;
+      color: #2b4b68;
+      padding-left: 1.2rem;
+      line-height: 1.5;
+      margin-bottom: 0.15rem;
+    }
+
+    .node-desc strong {
+      color: #0f3654;
+    }
+
+    .sub-node {
+      margin-left: 1.2rem;
+      border-left: 1px dashed #b8cfe2;
+      padding-left: 0.8rem;
+      margin-top: 0.15rem;
+      font-size: 0.84rem;
+      color: #1e3f5c;
+    }
+
+    .sub-node li {
+      list-style: none;
+      margin-bottom: 0.2rem;
+      display: flex;
+      gap: 6px;
+    }
+
+    .sub-node li::before {
+      content: "▹";
+      color: #4a8bb9;
+      font-weight: bold;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #d9e9f7;
+      color: #0b2b4a;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.6rem;
+      border-radius: 20px;
+      margin-left: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .highlight {
+      background: #fff5e6;
+      border-left-color: #e09f3e;
+    }
+
+    .small-note {
+      font-size: 0.78rem;
+      color: #5a6f84;
+      margin-top: 0.4rem;
+      background: #f7fafd;
+      padding: 0.3rem 0.8rem;
+      border-radius: 12px;
+    }
+
+    /* 全宽分支 (用于名词解释) */
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* 底部水印说明 */
+    .footer-note {
+      margin-top: 2.2rem;
+      font-size: 0.78rem;
+      color: #6c8095;
+      text-align: center;
+      border-top: 1px solid #d0dfec;
+      padding-top: 1.4rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>
+    <span>🛡️</span> 国内贸易信用保险（2026版）· 思维导图 <span>📋</span>
+  </h1>
+  <div class="subhead">
+    <span>条款 + 产品说明书 合并整理</span>  &nbsp;|&nbsp; 中国出口信用保险公司
+  </div>
+
+  <div class="mindmap">
+    <!-- 根节点 -->
+    <div class="root-node">国内贸易信用保险（2026版）</div>
+
+    <!-- 主分支网格 -->
+    <div class="branch-grid">
+
+      <!-- 1. 适保范围 & 保险责任 -->
+      <div class="branch">
+        <div class="branch-header"><span class="icon">📌</span> 一、保障范围</div>
+        <div class="branch-content">
+          <div class="node-item">
+            <div class="node-title">适保范围</div>
+            <div class="node-desc">投保人位于中国境内，被保险人为境内注册企业；贸易真实合法，书面合同，信用期限≤1年；<strong>寄售除外</strong>。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">保险责任</div>
+            <div class="node-desc">交付货物/服务后，因下列风险导致直接损失：</div>
+            <div class="sub-node">
+              <li>买方破产或无力偿付债务</li>
+              <li>买方拖欠</li>
+            </div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">保险期间</div>
+            <div class="node-desc">一般不超过1年，具体以保单明细表为准。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 除外责任 -->
+      <div class="branch">
+        <div class="branch-header"><span class="icon">🚫</span> 二、除外责任</div>
+        <div class="branch-content">
+          <div class="node-item">
+            <div class="node-desc">
+              <li>被保险人自身破产/违约/欺诈/违法行为；代理人破产</li>
+              <li>已知风险发生或买方根本/预期违约后仍继续交付</li>
+              <li>未及时获得许可证/批准/授权导致合同无法履行</li>
+              <li>国家/地方机关法律法规、命令决定导致合同无法履行</li>
+              <li>不可抗力</li>
+              <li>关联方之间的贸易损失</li>
+              <li>保险责任以外的其他损失</li>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 责任限额 & 赔偿比例 -->
+      <div class="branch">
+        <div class="branch-header"><span class="icon">📊</span> 三、责任限额</div>
+        <div class="branch-content">
+          <div class="node-item">
+            <div class="node-title">最高赔偿限额</div>
+            <div class="node-desc">保单期间累计最高赔偿额，载明于《保险单明细表》。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">信用限额</div>
+            <div class="node-desc">对特定买方确定的赔付基数上限；赔偿额=赔付基数×赔偿比例，且不超最高赔偿限额。</div>
+            <div class="sub-node">
+              <li>赔偿比例可调整，以审批/调整信用限额单证为准</li>
+              <li>调整后比例适用于生效日后的交付/服务</li>
+              <li>每一买方需书面申请信用限额</li>
+              <li>信用限额可循环使用，但有限额闲置期</li>
+              <li>新限额生效后原限额自动失效，余额归入新限额</li>
+              <li>提交《可能损失通知书》后该买方信用限额自动撤销</li>
+              <li>未在交付前获得有效信用限额，保险人不承担赔偿责任</li>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 申报 & 保险费 -->
+      <div class="branch">
+        <div class="branch-header"><span class="icon">📝</span> 四、申报与保险费</div>
+        <div class="branch-content">
+          <div class="node-item">
+            <div class="node-title">申报义务</div>
+            <div class="node-desc">应按约定方式申报全部适保贸易；未按时/误申报，保险人有权降低赔偿比例或拒赔；故意未申报，可对所有贸易降低比例/拒赔且不退保费。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">保险费</div>
+            <div class="node-desc">按保单列明方式计算收取；未足额交纳，可降低比例/拒赔；拖欠超60日，保险人有权解除保单且不退保费。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. 索赔 -->
+      <div class="branch">
+        <div class="branch-header"><span class="icon">📬</span> 五、索赔流程</div>
+        <div class="branch-content">
+          <div class="node-item">
+            <div class="node-title">可能损失通知书</div>
+            <div class="node-desc">风险发生之日起<strong>10个工作日内</strong>提交；是索赔前提条件，逾期可降低比例/拒赔。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">索赔时限</div>
+            <div class="node-desc">提交《可能损失通知书》后<strong>3个月内</strong>提交索赔申请书及单证；逾期可降低比例/拒不受理（非事先书面同意）。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">核赔时限</div>
+            <div class="node-desc">拖欠案件：4个月内核实损失原因并通知；破产案件：收到法院文件后30日内核实。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">赔付基数</div>
+            <div class="node-desc">按核定损失金额与信用限额从低原则，不超发票金额；赔付金额=基数×赔偿比例。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">付款条件</div>
+            <div class="node-desc">赔付决定后30日内支付，前提是收到《赔款收据及权益转让书》及《委托代理协议书》。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">担保/纠纷处理</div>
+            <div class="node-desc">有担保或纠纷时，除非保险人书面认可，需先仲裁/诉讼并申请执行；诉讼费、律师费等由被保险人先付，胜诉且属保险责任时按权益比例分摊。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">定损扣减项</div>
+            <div class="sub-node">
+              <li>买方已支付/抵销/擅自降价/放弃债权/接受反索赔款项</li>
+              <li>已从其他途径收回的款项及权益</li>
+              <li>已从买方获得其他款项</li>
+              <li>已收取的利息/罚息/违约金</li>
+              <li>其他不合理款项或费用</li>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. 追偿 -->
+      <div class="branch">
+        <div class="branch-header"><span class="icon">⚖️</span> 六、追偿</div>
+        <div class="branch-content">
+          <div class="node-item">
+            <div class="node-title">追偿义务</div>
+            <div class="node-desc">提交《可能损失通知书》后应委托保险人追偿或按指示自行追偿，否则可降低比例/拒赔。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">费用分摊</div>
+            <div class="node-desc">属保险责任则按权益比例分摊追偿费用；不属保险责任则由被保险人承担。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">权益转让</div>
+            <div class="node-desc">赔付后，贸易合同项下权益转让给保险人；赔款外欠款授权保险人代为追偿，被保险人需协助。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">赔款退还</div>
+            <div class="node-desc">出现欺诈、恶意串通、擅自放弃债权、导致代位求偿受阻、损失不属保险责任等，保险人可要求退还赔款及利息（10个工作日内）。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. 投保人/被保险人义务 -->
+      <div class="branch">
+        <div class="branch-header"><span class="icon">🧾</span> 七、义务与保证</div>
+        <div class="branch-content">
+          <div class="node-item">
+            <div class="node-desc">
+              <li>不得就适保贸易向其他机构投保信用保险</li>
+              <li>如实告知风险信息，及时通知不利消息及风险发生</li>
+              <li>买方破产时及时登记债权</li>
+              <li>公司名称变更10个工作日内书面通知</li>
+              <li>协助核查账册、合同、单证、应收账款等</li>
+              <li>未履行义务影响保险人利益，可降低比例/拒赔/解除保单且不退保费</li>
+              <li>未如实告知，保险人可30日内解除保单或相关信用限额部分，拒赔且不退保费</li>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. 其他约定（续保、转让、保密、争议） -->
+      <div class="branch">
+        <div class="branch-header"><span class="icon">📄</span> 八、其他重要约定</div>
+        <div class="branch-content">
+          <div class="node-item">
+            <div class="node-title">保单解除/终止</div>
+            <div class="node-desc">投保人可书面解除，但不影响解除前责任；被保险人停业/破产/无力偿债，保险人有权解除。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">权益转让限制</div>
+            <div class="node-desc">未经保险人书面同意，转让/抵押/质押保单权益对保险人无约束力；债权转让需通知保险人，危险程度显著增加可加费/解除。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">保密义务</div>
+            <div class="node-desc">双方对非公开信息保密，保单期间及终止后3年内有效。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">争议解决</div>
+            <div class="node-desc">协商不成按《保险单明细表》约定方式；适用中华人民共和国法律，中文文本为准。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. 保单预期利益 + 起售停售 (来自产品说明书) -->
+      <div class="branch">
+        <div class="branch-header"><span class="icon">📅</span> 九、产品说明补充</div>
+        <div class="branch-content">
+          <div class="node-item">
+            <div class="node-title">保单预期利益</div>
+            <div class="node-desc">纯保障型保险，不具备投资和储蓄功能，无额外保单收益。</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">起售日期</div>
+            <div class="node-desc">2026年9月1日（承保系统上线2026年9月19日）</div>
+          </div>
+          <div class="node-item">
+            <div class="node-title">停售日期</div>
+            <div class="node-desc">未停售</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. 名词解释（全宽） -->
+      <div class="branch full-width">
+        <div class="branch-header"><span class="icon">📖</span> 十、名词解释（重点摘录）</div>
+        <div class="branch-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.8rem;">
+          <div><span class="tag">保单</span> 包括投保单、保险单明细表、批单、条款、信用限额申请表/审批单、索赔单证明细表、委托代理协议书、申报单等。</div>
+          <div><span class="tag">保险人</span> 中国出口信用保险公司。</div>
+          <div><span class="tag">寄售</span> 委托人先将货物运往寄售地，受托人按协议代为销售后结算货款——本保单除外。</div>
+          <div><span class="tag">信用期限</span> 自交付货物/提供服务之日起至合同约定买方应付款日止的期间。</div>
+          <div><span class="tag">交付货物</span> 转移货物/所有权凭证给买方或指定第三方并取得书面确认；排除合同前已实际占有、存放买方仓库、返还请求权让与、约定继续占有等情形。</div>
+          <div><span class="tag">买方</span> 境内依法成立并与被保险人签订贸易合同的法人和其他组织。</div>
+          <div><span class="tag">破产</span> 法院裁定受理对买方的破产申请。</div>
+          <div><span class="tag">无力偿付债务</span> 解散未清偿、停业/下落不明未清偿、强制执行后资产不足、其他经保险人认可的丧失偿付能力情形。</div>
+          <div><span class="tag">拖欠</span> 超过应付款日后30日仍未支付货款或服务款项（另有约定除外）。</div>
+          <div><span class="tag">不可抗力</span> 不能预见、不能避免且不能克服的客观情况：自然灾害、政府行为、社会事件等。</div>
+          <div><span class="tag">关联关系</span> 控股股东、实控人、董监高与其直接/间接控制企业间的关系；合同签订前后各12个月内存在即视为关联关系（国家控股企业间除外）。</div>
+          <div><span class="tag">追偿费用</span> 调查费、诉讼费、仲裁费、律师费、公证费、认证费、翻译费、佣金等，需在合理范围内。</div>
+          <div><span class="tag">应收账款</span> 已申报并交纳保险费的贸易对应的应收账款。</div>
+          <div><span class="tag">限额闲置期</span> 信用限额批复后，保单允许的连续无申报期限。</div>
+        </div>
+      </div>
+
+    </div> <!-- branch-grid -->
+  </div> <!-- mindmap -->
+
+  <div class="footer-note">
+    基于《国内贸易信用保险（2026版）条款》及《产品说明书》整合 · 仅作信息概览，具体以保单及正式条款为准。
+  </div>
+</div>
+</body>
+</html>
